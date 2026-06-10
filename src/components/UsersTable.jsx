@@ -24,10 +24,10 @@ const UsersTable = ({users}) => {
                                         <Button variant="outline">Details</Button>
                                     </Link>
                                     <Link href={`/users/${user._id}`}>
-                                        <Button variant="outline">Details</Button>
+                                        <Button variant="outline">Edit</Button>
                                     </Link>
                                     <Link href={`/users/${user._id}`}>
-                                        <Button variant="outline">Details</Button>
+                                        <Button variant="danger">Delete</Button>
                                     </Link>
                                         
                             </Table.Cell>

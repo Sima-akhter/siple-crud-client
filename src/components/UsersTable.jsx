@@ -29,7 +29,7 @@ const UsersTable = ({users}) => {
                                     </Link>
                                     <Link href={`/users/${user._id}`}>
                                          <AlertDialog>
-      <Button variant="danger">Delete Project</Button>
+      <Button variant="danger">Delete</Button>
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
           <AlertDialog.Dialog className="sm:max-w-100">

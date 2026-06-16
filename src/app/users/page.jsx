@@ -8,7 +8,7 @@ const UsersPage = async () => {
   return (
       <div>
           <h2>User Management: {users.length}</h2>
-          <UsersTable users={users} />
+          <UsersTable users={users} deleteUserAction={deleteUser} />
       </div>
     
   )

@@ -4,10 +4,10 @@ import {Button} from "@heroui/react";
 import Link from 'next/link';
 import {AlertDialog} from "@heroui/react";
 
-const UsersTable = ({ users }) => {
+const UsersTable = ({ users, deleteUserAction }) => {
     
     const handleDelete = async(userId) => {
-        await deleteUser(userId);
+        await deleteUserAction(userId);
     }
 
 

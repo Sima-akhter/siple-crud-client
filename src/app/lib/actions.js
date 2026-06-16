@@ -4,6 +4,9 @@ const deleteUser = async (usersId) => {
         method: "DELETE"
     });
     const data = await res.json();
+    if (data.deletedCount > 0) {
+        revalidatePath("/users");
+    }
     return data;
 
 

@@ -34,7 +34,7 @@ const UsersTable = ({ users, deleteUserAction }) => {
                                     <Link href={`/users/${user._id}`}>
                                         <Button variant="outline">Edit</Button>
                                     </Link>
-                                    <Link href={`/users/${user._id}`}>
+                                    
                                          <AlertDialog>
       <Button variant="danger">Delete</Button>
       <AlertDialog.Backdrop>
@@ -43,11 +43,11 @@ const UsersTable = ({ users, deleteUserAction }) => {
             <AlertDialog.CloseTrigger />
             <AlertDialog.Header>
               <AlertDialog.Icon status="danger" />
-              <AlertDialog.Heading>Delete project permanently?</AlertDialog.Heading>
+              <AlertDialog.Heading>Delete User permanently?</AlertDialog.Heading>
             </AlertDialog.Header>
             <AlertDialog.Body>
               <p>
-                This will permanently delete <strong>My Awesome Project</strong> and all of its
+                This will permanently delete <strong>{user.name}</strong> and all of its
                 data. This action cannot be undone.
               </p>
             </AlertDialog.Body>
@@ -56,14 +56,14 @@ const UsersTable = ({ users, deleteUserAction }) => {
                 Cancel
               </Button>
               <Button slot="close" onClick={() => handleDelete(user._id)} variant="danger">
-                Delete 
+               Confirm Delete 
               </Button>
             </AlertDialog.Footer>
           </AlertDialog.Dialog>
         </AlertDialog.Container>
       </AlertDialog.Backdrop>
     </AlertDialog>
-                                    </Link>
+                                   
                                         
                             </Table.Cell>
                         </Table.Row>)

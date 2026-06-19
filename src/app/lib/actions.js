@@ -1,4 +1,6 @@
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+
 
 export const createUser = async (formData) => { 
     'use server';
@@ -32,6 +34,7 @@ export const updateUser = async (userId, formData) => {
 
     if (data.modifiedCount > 0) {
         revalidatePath("/users");
+        redirect("/users");
     }
     return data;
 }

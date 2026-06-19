@@ -9,6 +9,7 @@ const UserEditPage = async ({ params }) => {
 
 
     const updateUserWrapper = async (formData) => { 
+        'use server';
         return await updateUser(userId, formData);
     }
 

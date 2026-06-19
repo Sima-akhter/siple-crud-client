@@ -1,3 +1,5 @@
+import { revalidatePath } from "next/cache";
+
 export const deleteUser = async (usersId) => { 
 'use server';
     const res = await fetch(`http://localhost:5000/users/${usersId}`, {

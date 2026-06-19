@@ -1,3 +1,4 @@
+import { updateUser } from '@/app/lib/actions';
 import { getUserById } from '@/app/lib/data';
 import { Input, TextField, Button,  Label } from '@heroui/react';
 import React from 'react'
@@ -5,12 +6,18 @@ import React from 'react'
 const UserEditPage = async ({ params }) => {
     const { userId } = await params;
     const user = await getUserById(userId);
+
+
+    const updateUserWrapper = async (formData) => { 
+        return await updateUser(userId, formData);
+    }
+
   return (
       <div>
           <h2>Editing User: {user.name}</h2>
           <div className='w-1/2 mx-auto'>
 
-               <form  className="flex flex-col gap-4">
+               <form action={updateUserWrapper}  className="flex flex-col gap-4">
                                 <TextField className="w-full" defaultValue={user?.name} name="name" type="text" variant="secondary">
                                   <Label>Name</Label>
                                   <Input placeholder="Enter your name" />

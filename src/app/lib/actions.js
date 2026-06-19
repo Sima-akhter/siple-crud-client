@@ -15,6 +15,25 @@ export const createUser = async (formData) => {
     if (data.insertedId) {
         revalidatePath("/users");
     }
+    return data;
+}
+
+export const updateUser = async (userId, formData) => {
+    'use server';
+    const updatedUser = Object.fromEntries(formData.entries());
+    const res = await fetch(`http://localhost:5000/users/${userId}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updatedUser)
+    });
+    const data = await res.json();
+
+    if (data.modifiedCount > 0) {
+        revalidatePath("/users");
+    }
+    return data;
 }
 
 export const deleteUser = async (usersId) => { 

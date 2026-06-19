@@ -12,14 +12,9 @@ const AddUserModal = () => {
           <Modal.Dialog className="sm:max-w-md">
             <Modal.CloseTrigger />
             <Modal.Header>
-              <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-                <Envelope className="size-5" />
-              </Modal.Icon>
-              <Modal.Heading>Contact Us</Modal.Heading>
-              <p className="mt-1.5 text-sm leading-5 text-muted">
-                Fill out the form below and  get back to you. The modal adapts automatically
-                when the keyboard appears on mobile.
-              </p>
+              
+              <Modal.Heading>Add User</Modal.Heading>
+             
             </Modal.Header>
             <Modal.Body className="p-6">
               <Surface variant="default">
@@ -30,20 +25,13 @@ const AddUserModal = () => {
                   </TextField>
                   <TextField className="w-full" name="email" type="email" variant="secondary">
                     <Label>Email</Label>
-                    <Input placeholder="Enter your email" />
+                    <Input placeholder="Enter User Role" />
                   </TextField>
-                  <TextField className="w-full" name="phone" type="tel" variant="secondary">
-                    <Label>Phone</Label>
+                  <TextField className="w-full" name="role" type="tel" variant="secondary">
+                    <Label>Role</Label>
                     <Input placeholder="Enter your phone number" />
                   </TextField>
-                  <TextField className="w-full" name="company" variant="secondary">
-                    <Label>Company</Label>
-                    <Input placeholder="Enter your company name" />
-                  </TextField>
-                  <TextField className="w-full" name="message" variant="secondary">
-                    <Label>Message</Label>
-                    <Input placeholder="Enter your message" />
-                  </TextField>
+                  
                 </form>
               </Surface>
             </Modal.Body>
@@ -51,7 +39,7 @@ const AddUserModal = () => {
               <Button slot="close" variant="secondary">
                 Cancel
               </Button>
-              <Button slot="close">Send Message</Button>
+              <Button slot="close">Add User</Button>
             </Modal.Footer>
           </Modal.Dialog>
         </Modal.Container>
